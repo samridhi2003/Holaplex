@@ -6,7 +6,7 @@ import Image from 'react-bootstrap/Image';
 import Stack from 'react-bootstrap/Stack';
 import './index.css';
 import Check from './Check.js';
-import React from 'react';
+import React, { useState } from 'react';
 import { Liked } from './Liked';
 import { TweetwithHash } from './TweetwithHash';
 import Card from 'react-bootstrap/Card';
@@ -15,6 +15,7 @@ import Card from 'react-bootstrap/Card';
 
 function BrandExample() {
 
+  const [isConnected, userIsConnected]= useState(true);
 
 
   return (
@@ -29,9 +30,12 @@ function BrandExample() {
           <Nav className="me-auto">
           </Nav>
           <div className="mb-2">
+             {isConnected? 
             <Button variant="warning" size="lg">
               Connect Twitter
-            </Button>
+            </Button>: <Button variant="warning" size="lg">
+              Connected Twitter
+            </Button>}
           </div>
         </Container>
       </Navbar>
