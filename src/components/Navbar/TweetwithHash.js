@@ -12,11 +12,11 @@ export const TweetwithHash = () => {
   }
   return (
     <>
-    <div className='Twitted'  checked={isTwitted} onChange={handleOnChange}>
-       <div className='result'>
+    <span className='Twitted'  checked={isTwitted} onChange={handleOnChange}>
+       <span className='result'>
         {isTwitted ? <SlCheck/> :<RxCrossCircled/> }
-       </div>
-       </div>
+       </span>
+       </span>
     </>
   )
 }
