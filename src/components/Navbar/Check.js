@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { SlCheck } from "react-icons/sl";
 import { RxCrossCircled } from "react-icons/rx";
 
-export const Check = () => {
-  const [isChecked, setIsChecked] = useState(false);
+export const Check = (props) => {
+  const [isChecked, setIsChecked] = useState(true);
+
+  console.log(Check)
 
   const handleOnChange = () => {
     setIsChecked(!isChecked)

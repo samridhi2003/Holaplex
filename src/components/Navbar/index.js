@@ -6,14 +6,16 @@ import Image from "react-bootstrap/Image";
 import Stack from "react-bootstrap/Stack";
 import "./index.css";
 import Check from "./Check.js";
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Liked } from "./Liked";
 import { TweetwithHash } from "./TweetwithHash";
 import Card from "react-bootstrap/Card";
+import UserConnected from "../UserConnected";
+
+
 
 function BrandExample() {
-
-  const[isConnected, userIsConnected]= useState(false);
+  const [isConnected, userIsConnected] = useState(false);
 
   return (
     <>
@@ -28,12 +30,11 @@ function BrandExample() {
           </Navbar.Brand>
           <Nav className="me-auto"></Nav>
           <div className="mb-2">
-             {isConnected? 
-            <Button variant="warning" size="lg">
-              Connect Twitter
-            </Button>: <Button variant="warning" size="lg">
-              Connected Twitter
-            </Button>}
+            {isConnected ?
+              <UserConnected />
+              : <Button variant="warning" size="lg">
+                Connect Twitter
+              </Button>}
           </div>
         </Container>
       </Navbar>
@@ -63,12 +64,11 @@ function BrandExample() {
                 <hr />
                 Tweet with hashtag #holaplexhub <TweetwithHash />
               </div>
-              <Card>
+              <Card className="bg-dark text-light">
                 <Card.Body>
-                  Criteria Not Met
-                  <Button variant="warning" size="lg">
-                    Claim Now
-                  </Button>
+                  Criteria Not Met:(
+                  {" "}
+                  <Button disabled={true} variant="warning" size="lg">Claim Now</Button>
                 </Card.Body>
               </Card>
             </Stack>

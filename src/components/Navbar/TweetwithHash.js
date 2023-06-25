@@ -4,8 +4,8 @@ import { SlCheck } from "react-icons/sl";
 import { RxCrossCircled } from "react-icons/rx";
 
 
-export const TweetwithHash = () => {
-    const [isTwitted, setIsTwitted] = useState(false);
+export const TweetwithHash = (props) => {
+    const [isTwitted, setIsTwitted] = useState(true);
 
   const handleOnChange = () => {
     setIsTwitted(!isTwitted)
